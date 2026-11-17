@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按发布日期回看视野环球财经的整理稿、分析思路和原文稿。">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>视野环球财经 · 语义看板</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a href="#workspace" class="skip">跳到资料</a>
+  <header class="masthead">
+    <div class="frame masthead-inner">
+      <a class="brand" href="./" aria-label="语义看板首页">
+        <span class="brand-icon" aria-hidden="true">视</span>
+        <span>视野环球财经</span>
+      </a>
+    </div>
+  </header>
+  <main class="frame">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-heading">
+        <p class="window" id="date-range">最近 10 个北京时间自然日</p>
+        <h1 id="page-title">财经语义库</h1>
+        <p class="intro">回看市场观点、分析思路与原视频时间点。</p>
+      </div>
+      <dl class="stats" aria-label="当前窗口收录情况">
+        <div><dt>视频</dt><dd id="count-video">—</dd></div>
+        <div><dt>整理稿</dt><dd id="count-analysis">—</dd></div>
+        <div><dt>原文稿</dt><dd id="count-transcript">—</dd></div>
+      </dl>
+    </section>
+    <section class="workspace" id="workspace" aria-label="浏览和搜索资料">
+      <div class="toolbar">
+        <div class="modes" role="group" aria-label="选择资料类型">
+          <button class="mode" type="button" data-mode="analysis" aria-pressed="true">整理稿</button>
+          <button class="mode" type="button" data-mode="transcript" aria-pressed="false">原文稿</button>
+        </div>
+        <div class="search-box" role="search">
+          <label class="sr-only" for="search">搜索股票代码、主题或视频标题</label>
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="search" type="search" placeholder="搜索股票代码、主题或标题" enterkeyhint="search" autocomplete="off">
+        </div>
+      </div>
+      <div class="reading-grid">
+        <nav class="catalog" aria-label="视频目录">
+          <div class="catalog-header"><span>发布日期</span><span id="result-count" role="status"></span></div>
+          <ul id="video-list" class="video-list"></ul>
+        </nav>
+        <article id="reader" class="reader" aria-label="当前资料" tabindex="-1">
+          <p class="placeholder" role="status">正在载入资料…</p>
+        </article>
+      </div>
+      <noscript><p class="placeholder">请启用 JavaScript 以浏览此看板。</p></noscript>
+    </section>
+    <footer class="footer"><p>日期按北京时间显示</p><p id="published-at"></p></footer>
+  </main>
+</body>
+</html>
